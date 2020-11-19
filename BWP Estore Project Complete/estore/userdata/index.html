@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <!-- Title Page-->
+    <title>User Data</title>
+
+    
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">User Detail</h2>
+                </div>
+                <div class="card-body">
+                    <di>
+                        <div class="form-row m-b-55">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="first_name" id="fn">
+                                            <label class="label--desc">first name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="last_name" id="ln">
+                                            <label class="label--desc">last name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company" id="address">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-row">
+                            <div class="name">City</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company" id="city">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">State</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company" id="state">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Country</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company" id="con">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Pin Code</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company" id="pin">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="email" name="email" id="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="area_code" id="code">
+                                            <label class="label--desc">Area Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="phone" id="phone">
+                                            <label class="label--desc">Phone Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row p-t-20">
+                            <label class="label label--block">Gender</label>
+                            <div class="p-t-15">
+                                <label class="radio-container m-r-55">Male
+                                    <input type="radio" checked="checked" name="gen" value="male">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="radio-container">Female
+                                    <input type="radio" name="gen" value="female">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" id="sub">Register / Save Changes</button>
+                        </div>
+                        <br><br>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" id="reset">Clear / Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    
+
+    
+
+
+
+            <!-- firebase---->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJU0ha3YKoTnTteaqWD_8E1YCIihzH604",
+    authDomain: "estore-cf106.firebaseapp.com",
+    databaseURL: "https://estore-cf106.firebaseio.com",
+    projectId: "estore-cf106",
+    storageBucket: "estore-cf106.appspot.com",
+    messagingSenderId: "987443521681",
+    appId: "1:987443521681:web:24c75344afa0ea3be8f730"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  $(document).ready(function(){
+    
+    $('#reset').click(function(){
+        reset();
+    })
+    
+    var UID;
+
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    UID=user.uid;
+    EMAIL=user.email
+    var d;
+    $.ajax({
+                        type: 'GET',
+                        contentType: 'application/json',
+                        url: 'http://localhost:1234/api/user/'+ UID,                      
+                        success: function(data) {
+                            d=data
+                            
+                            $('#fn').val(data.fn)
+                            $('#ln').val(data.ln)
+                            $('#address').val(data.address)
+                            if (data.email) {$('#email').val(data.email)}
+                                else{
+                                    $('#email').val(EMAIL)
+                                }
+                            
+                            $('#phone').val(data.phone)
+                            $('#con').val(data.country)
+                            $('#state').val(data.state)
+                            $('#city').val(data.city)
+                            $('#code').val(data.code)
+                            $('input[name="gen"]').val([data.gender]);
+                            $('#pin').val(data.pin);
+                            //here update it for all
+                        }
+                    });
+
+
+
+
+  } else {
+        
+  }
+});
+
+    $('#sub').click(function(){
+        var fn=$('#fn').val()
+        var ln=$('#ln').val()
+        var address=$('#address').val()
+        var email=$('#email').val()
+        var phone=$('#phone').val()
+        var con=$('#con').val()
+        var state=$('#state').val()
+        var city=$('#city').val()
+        var code=$('#code').val();
+        var pin=$('#pin').val();
+        var gender=$('input[name="gen"]:checked').val()
+        if(validate()){
+                
+        
+        var uid=UID
+
+        var data={
+            "fn":fn,
+            "ln":ln,
+            "address":address,
+            "email":email,
+            "phone":phone,
+            "gender":gender,
+            _id:uid,
+            "uid":uid,
+            "country":con,
+            "state":state,
+            "city":city,
+            "wishlist" :[],
+            "code":code,
+            "pin":pin
+        }
+        
+        $.ajax({
+                        type: 'PUT',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json',
+                        url: 'http://localhost:1234/api/user/'+ uid,                      
+                        success: function(data) {
+                            alert('data updated Successfully')
+                            window.location.replace('../index.html')
+                        }
+                    });
+        }
+        else{
+            alert('all fields are mandatory.Please Fill Up');
+        }
+
+        
+
+    })
+
+
+   
+
+  })
+
+
+  function validate(){
+
+        var bool=true;
+        var fn=$('#fn').val()
+        var ln=$('#ln').val()
+        var address=$('#address').val()
+        var email=$('#email').val()
+        var phone=$('#phone').val()
+        var con=$('#con').val()
+        var state=$('#state').val()
+        var city=$('#city').val()
+        var code=$('#code').val();
+        var pin=$('#pin').val();
+        var gender=$('input[name="gen"]:checked').val()
+
+
+        if(fn=='' || ln=='' || address=='' || email==''|| phone==''||con==''||state==''||city==''||code==''||pin==''||gender=='')
+        {
+            bool=false;
+        }
+
+        return bool;
+  }
+
+  function reset(){
+    var bool=true;
+        $('#fn').val('')
+        $('#ln').val('')
+        $('#address').val('')
+        $('#email').val('')
+        $('#phone').val('')
+        $('#con').val('')
+        $('#state').val('')
+        $('#city').val('')
+        $('#code').val('');
+        $('#pin').val('');
+  }
+
+</script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <!-- Title Page-->
+    <title>Product Data</title>
+
+    
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Product Detail</h2>
+                </div>
+                <div class="card-body">
+                    <div>
+                        
+                        <div class="form-row">
+                            <div class="name">Title</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company" id="title">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Brand</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="company" id="brand">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Suitable Category</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="subject" id="category" style="background: lightgrey">
+                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="TVs & Home Appliances">TVs & Home Appliances</option>
+                                            <option value="Men">Men</option>
+                                            <option value="Women">Women</option>
+                                            <option value="Baby & Kids">Baby & Kids</option>
+                                            <option value="Home & Furniture">Home & Furniture</option>
+                                            <option value="Sports & Books">Sports & Books</option>
+                                            <option value="Gaming & Music">Gaming & Music</option>
+                                            <option value="other">other</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Price</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    &#8377;
+                                    <input class="input--style-5" type="number" name="company" id="price" value="" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Description</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <textarea class="input--style-5" style="line-height: normal;" rows="4" cols="40" type="text" name="company" id="description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Quantity</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="number" name="company" id="quantity">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Thumbnail</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="file" name="company" id="thumb" accept="image/*">
+                                    <br><br>
+                                    <button class="btn btn--radius-2 btn--red" id="upt">upload</button>
+                                    <span id="st" style="color: green"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Photo 1</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="file" name="company" id="p1" accept="image/*">
+                                    <br><br>
+                                    <button class="btn btn--radius-2 btn--red" id="up1">upload</button>
+                                    <span id="sp1" style="color: green"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Photo 2</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="file" name="company" id="p2" accept="image/*">
+                                    <br><br>
+                                    <button class="btn btn--radius-2 btn--red" id="up2">upload</button>
+                                    <span id="sp2" style="color: green"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Photo 3</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="file" name="company" id="p3" accept="image/*">
+                                    <br><br>
+                                    <button class="btn btn--radius-2 btn--red" id="up3">upload</button>
+                                    <span id="sp3" style="color: green"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                            <button class="btn btn--radius-2 btn--red" id="sub">Register / Save Changes</button>
+                        </div>
+                        <br><br>
+                        <div>
+                            <button class="btn btn--radius-2 btn--red" id="reset">Clear / Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    
+
+
+
+
+            <!-- firebase---->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCJU0ha3YKoTnTteaqWD_8E1YCIihzH604",
+    authDomain: "estore-cf106.firebaseapp.com",
+    databaseURL: "https://estore-cf106.firebaseio.com",
+    projectId: "estore-cf106",
+    storageBucket: "estore-cf106.appspot.com",
+    messagingSenderId: "987443521681",
+    appId: "1:987443521681:web:24c75344afa0ea3be8f730"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+  var t=''
+  var p1=''
+  var p2=''
+  var p3=''
+
+  $(document).ready(function(){
+
+
+    $('#upt').click(function(){
+        if(document.getElementById('thumb').files.length!=0)
+        {
+
+            var thumb=document.getElementById('thumb').files[0]
+            var storage=firebase.storage().ref()
+            var uploadTask=storage.child('products/'+UID+''+Math.floor(Math.random() * 10000000) ).put(thumb)
+            uploadTask.on('state_changed', function(snapshot){
+  // Observe state change events such as progress, pause, and resume
+  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  $('#st').text('Upload is ' + progress + '% done')
+  console.log('Upload is ' + progress + '% done');
+  switch (snapshot.state) {
+    case firebase.storage.TaskState.PAUSED: // or 'paused'
+    $('#st').text('Upload is paused')
+      console.log('Upload is paused');
+      break;
+    case firebase.storage.TaskState.RUNNING: // or 'running'
+    $('#st').text('Upload is running')
+      console.log('Upload is running');
+      break;
+  }
+}, function(error) {
+    $('#st').text(error.message)
+    console.log(error.message)
+  // Handle unsuccessful uploads
+}, function() {
+    $('#st').text('Uploaded Successfully')
+  // Handle successful uploads on complete
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    t=downloadURL
+    console.log('File available at', t);
+  });
+});
+        }
+        
+    })
+
+
+
+
+
+
+
+
+
+    $('#up1').click(function(){
+        if(document.getElementById('p1').files.length!=0)
+        {
+
+            var thumb=document.getElementById('p1').files[0]
+            var storage=firebase.storage().ref()
+            var uploadTask=storage.child('products/'+UID+''+Math.floor(Math.random() * 10000000) ).put(thumb)
+            uploadTask.on('state_changed', function(snapshot){
+  // Observe state change events such as progress, pause, and resume
+  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  $('#sp1').text('Upload is ' + progress + '% done')
+  console.log('Upload is ' + progress + '% done');
+  switch (snapshot.state) {
+    case firebase.storage.TaskState.PAUSED: // or 'paused'
+    $('#sp1').text('Upload is paused')
+      console.log('Upload is paused');
+      break;
+    case firebase.storage.TaskState.RUNNING: // or 'running'
+    $('#sp1').text('Upload is running')
+      console.log('Upload is running');
+      break;
+  }
+}, function(error) {
+    $('#sp1').text(error.message)
+    console.log(error.message)
+  // Handle unsuccessful uploads
+}, function() {
+    $('#sp1').text('Uploaded Successfully')
+  // Handle successful uploads on complete
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    p1=downloadURL
+    console.log('File available at', p1);
+  });
+});
+        }
+        
+    })
+
+
+
+
+
+$('#up2').click(function(){
+        if(document.getElementById('p2').files.length!=0)
+        {
+
+            var thumb=document.getElementById('p2').files[0]
+            var storage=firebase.storage().ref()
+            var uploadTask=storage.child('products/'+UID+''+Math.floor(Math.random() * 10000000) ).put(thumb)
+            uploadTask.on('state_changed', function(snapshot){
+  // Observe state change events such as progress, pause, and resume
+  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  $('#sp2').text('Upload is ' + progress + '% done')
+  console.log('Upload is ' + progress + '% done');
+  switch (snapshot.state) {
+    case firebase.storage.TaskState.PAUSED: // or 'paused'
+    $('#sp2').text('Upload is paused')
+      console.log('Upload is paused');
+      break;
+    case firebase.storage.TaskState.RUNNING: // or 'running'
+    $('#sp2').text('Upload is running')
+      console.log('Upload is running');
+      break;
+  }
+}, function(error) {
+    $('#sp2').text(error.message)
+    console.log(error.message)
+  // Handle unsuccessful uploads
+}, function() {
+    $('#sp2').text('Uploaded Successfully')
+  // Handle successful uploads on complete
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    p2=downloadURL
+    console.log('File available at', p2);
+  });
+});
+        }
+        
+    })
+
+
+    
+
+
+
+
+    $('#up3').click(function(){
+        if(document.getElementById('p3').files.length!=0)
+        {
+
+            var thumb=document.getElementById('p3').files[0]
+            var storage=firebase.storage().ref()
+            var uploadTask=storage.child('products/'+UID+''+Math.floor(Math.random() * 10000000) ).put(thumb)
+            uploadTask.on('state_changed', function(snapshot){
+  // Observe state change events such as progress, pause, and resume
+  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  $('#sp3').text('Upload is ' + progress + '% done')
+  console.log('Upload is ' + progress + '% done');
+  switch (snapshot.state) {
+    case firebase.storage.TaskState.PAUSED: // or 'paused'
+    $('#sp3').text('Upload is paused')
+      console.log('Upload is paused');
+      break;
+    case firebase.storage.TaskState.RUNNING: // or 'running'
+    $('#sp3').text('Upload is running')
+      console.log('Upload is running');
+      break;
+  }
+}, function(error) {
+    $('#sp3').text(error.message)
+    console.log(error.message)
+  // Handle unsuccessful uploads
+}, function() {
+    $('#sp3').text('Uploaded Successfully')
+  // Handle successful uploads on complete
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    p3=downloadURL
+    console.log('File available at', p3);
+  });
+});
+        }
+        
+    })
+
+
+
+
+
+
+
+
+    
+    $('#reset').click(function(){
+        reset();
+    })
+    
+    var UID;
+
+    firebase.auth().onAuthStateChanged(function(user) {
+     if (user) {
+       UID=user.uid;
+    
+     } else {
+           
+     }
+    });
+
+    $('#sub').click(function(){
+       var title=$('#title').val()
+        var brand=$('#brand').val()
+        var category=$('#category option:selected').text()
+        console.log(category)
+
+        var price=$('#price').val()
+        var description=$('#description').val()
+        var quantity=$('#quantity').val()
+        var date=new Date();
+        
+
+        var owner=UID;
+        if(validate()){
+
+
+                
+        
+        var uid=UID
+
+        var data={
+            "title":title,
+            "brand":brand,
+            "price":price,
+            "description":description,
+            "quantity":quantity,
+            "owner":owner,
+            "date":{
+                "day":date.getDate(),
+                "month":date.getMonth(),
+                "year":date.getFullYear(),
+                "hour":date.getHours(),
+                "min":date.getMinutes(),
+                "sec":date.getSeconds()
+            },
+            "category":category,
+            "t" : t,
+            "p1" :p1,
+            "p2" :p2,
+            "p3" :p3
+        }
+        
+        $.ajax({
+                        type: 'POST',
+                        data: JSON.stringify(data),
+                        contentType: 'application/json',
+                        url: 'http://localhost:1234/api/product/',                      
+                        success: function(data) {
+                            alert('Product Uploaded Successfully')
+                            window.location.replace('../product_list.html')
+                        }
+                    });
+        }
+        else{
+            alert('all fields are mandatory.Please Fill Up');
+        }
+
+        
+
+    })
+
+
+   
+
+  })
+
+
+  function validate(){
+
+        var bool=true;
+        var title=$('#title').val()
+        var brand=$('#brand').val()
+        var category=$('#category option:selected').text()
+        
+        var price=$('#price').val()
+        var description=$('#description').val()
+        var quantity=$('#quantity').val()
+        
+
+
+        if(title=='' || brand=='' || price=='' || description==''|| quantity=='' || category=='' || t==''||p1==''||p2==''||p3=='')
+        {
+            bool=false;
+        }
+
+        return bool;
+  }
+
+  function reset(){
+    var bool=true;
+        $('#title').val('')
+        $('#brand').val('')
+        $('#category').val('')
+        $('#price').val('')
+        $('#description').val('')
+        $('#quantity').val('')
+        document.getElementById('thumb').value=''
+        document.getElementById('p1').value=''
+        document.getElementById('p2').value=''
+        document.getElementById('p3').value=''
+        t=''
+        p1=''
+        p2=''
+        p3=''
+        $('#st').text('')
+        $('#sp1').text('')
+        $('#sp2').text('')
+        $('#sp3').text('')
+
+        
+  }
+
+</script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
